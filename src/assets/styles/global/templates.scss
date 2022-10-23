@@ -1,0 +1,47 @@
+
+// === PLACEHOLDERS ===
+%btn {
+  // позволяет задать вертик внутр отступы + ширина по содержанию
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  // включаем принудительное наследование шрифта
+  font: inherit;
+  // убирает подчеркивание у ссылок
+  text-decoration: none;
+  background-color: transparent;
+  // рамка у кнопок
+  border: none;
+  cursor: pointer;
+}
+
+%picture {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+// === / PLACEHOLDERS ===
+
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(100%);
+}
+
+.hidden {
+  display: none !important;
+}

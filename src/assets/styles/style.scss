@@ -1,0 +1,14 @@
+@import "mixins";
+@import "global";
+@import "layout";
+
+// components
+//---------------------------------
+@import "../../components/tags/tags";
+@import "../../components/card/card";
+
+// modules
+//---------------------------------
+@import "../../modules/header/header";
+@import "../../modules/footer/footer";
+@import "../../modules/card-list/card-list";
