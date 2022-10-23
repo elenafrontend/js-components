@@ -1,0 +1,18 @@
+
+mixin tagItem(name)
+  li.tags__item
+    a.tags__icon(class=`tags__icon_${name}` href="#" title=`${name}`)
+      span.visually-hidden Sport type #{name}
+
+mixin tags(tagList)
+  .tags(class!=attributes.class)
+    ul.tags__list
+      each tag in tagList
+        +tagItem(tag)
+
+    .tags__btn-wrapper
+      button.tags__btn.tags__icon(title="Показать еще")
+        span.visually-hidden Показать остальные виды спорта
+        span.js-count +0
+
+      ul.tags__hidden-items.js-hidden-items

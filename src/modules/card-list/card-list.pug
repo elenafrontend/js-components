@@ -1,0 +1,30 @@
+
+include ../../components/card/card
+
+-
+  const cards = [
+    {
+      img: 'badminton.jpg',
+      title: 'УСК Центр Бадминтона',
+      tags: ['basketball', 'boxing', 'football', 'hockey', 'skating', 'swimming', 'volleyball'],
+      info: {
+        address: 'ул. Пушкина, д. 32а'
+      }
+    },
+    {
+      img: 'badminton.jpg',
+      title: 'УСК Центр Бадминтона Поволжского государственного университета физической культуры, спорта и туризма',
+      tags: ['basketball', 'boxing', 'football', 'hockey', 'skating'],
+      info: {
+        address: 'ул. Пушкина, д. 32а'
+      }
+    }
+  ]
+
+//- cards module grid example
+
+ul.card-list
+  each card in cards
+    li.card-list__item
+      +card(card)
+

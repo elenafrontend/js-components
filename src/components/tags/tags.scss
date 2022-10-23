@@ -1,0 +1,106 @@
+
+.tags {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--grey);
+  padding-top: 12px;
+}
+
+.tags__list {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+
+.tags__item {
+  flex-shrink: 0;
+}
+
+.tags__icon {
+  display: block;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+
+  background-color: $color-grey;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18px 18px;
+  transition: $transition-time background-color linear;
+
+  &:hover,
+  &:focus {
+    background-color: $color-silver;
+  }
+
+  &_basketball {
+    background-image: url('./../../components/tags/icons/basketball.svg');
+  }
+
+  &_boxing {
+    background-image: url('./../../components/tags/icons/boxing.svg');
+  }
+
+  &_football {
+    background-image: url('./../../components/tags/icons/football.svg');
+  }
+
+  &_hockey {
+    background-image: url('./../../components/tags/icons/hockey.svg');
+  }
+
+  &_skating {
+    background-image: url('./../../components/tags/icons/skating.svg');
+  }
+
+  &_swimming {
+    background-image: url('./../../components/tags/icons/swimming.svg');
+  }
+
+  &_volleyball {
+    background-image: url('./../../components/tags/icons/volleyball.svg');
+  }
+}
+
+.tags__btn-wrapper {
+  position: relative;
+  padding-left: 8px;
+  box-sizing: content-box;
+}
+
+.tags__btn {
+  @extend %btn;
+
+  font-size: 12px;
+  line-height: calc(18 / 12);
+}
+
+.tags__btn-wrapper:not(:focus-within) {
+  .tags__hidden-items {
+    display: none;
+  }
+}
+
+.tags__hidden-items {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: 100px;
+  border: 1px solid var(--silver);
+  width: inherit;
+  background-color: var(--grey);
+  overflow: hidden;
+
+  .tags--icon {
+    img {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}

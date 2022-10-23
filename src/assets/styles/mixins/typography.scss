@@ -1,0 +1,27 @@
+/* -------------------------------- многоточие многострочное -------------------------------- */
+
+@mixin ellipsis($line: 2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -moz-box;
+  display: -webkit-box;
+  -moz-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  line-clamp: $line;
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+}
+
+/* -------------------------------- подключение шрифтов ------------------------------------ */
+
+@mixin font-face($font-name, $path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: quote($font-name);
+    src:
+            url(#{$path}.woff) format("woff"),
+            url(#{$path}.woff2) format("woff2"),
+            url(#{$path}.ttf) format("truetype");
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
