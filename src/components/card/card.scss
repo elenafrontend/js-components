@@ -1,20 +1,44 @@
 .card {
-  display: flex;
-  flex-direction: column;
+  position: relative;
   border: 1px solid $border-color;
   border-radius: $radius-base;
   height: 100%;
 
   background: $color-white;
-  transition: $transition-time border linear;
+  transition: $transition-time;
 
-  &:hover {
+  &:hover,
+  &:focus-within {
     border-color: $color-silver;
+    transform: translateY(-5px);
 
-    .card--title {
+    &::before {
+      box-shadow: 16px 16px 0 rgba(32, 33, 37, 0.06);
+    }
+
+    .card__title {
       text-decoration: underline;
     }
   }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: $radius-base;
+    width: 100%;
+    height: 100%;
+    box-shadow: 8px 8px 0 rgba(32, 33, 37, 0.1);
+    transition: box-shadow $transition-time, transform $transition-time;
+  }
+}
+
+.card__wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card__data {
